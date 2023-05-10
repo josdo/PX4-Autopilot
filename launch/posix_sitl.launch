@@ -42,4 +42,5 @@
     </include>
     <!-- gazebo model -->
     <node name="$(anon vehicle_spawn)" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf -file $(arg sdf) -model $(arg vehicle) -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg R) -P $(arg P) -Y $(arg Y)"/>
+    <node name="green_dot" pkg="gazebo_ros" type="spawn_model" args="-sdf -file /home/sleepearly/tree-percher/catkin_ws/src/simulation/green_dot/model.sdf -x 0 -y 0 -z 1 -model green_dot" />
 </launch>
