@@ -12,7 +12,7 @@
     <!-- vehicle model and world -->
     <arg name="est" default="ekf2"/>
     <arg name="vehicle" default="iris"/>
-    <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/empty.world"/>
+    <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/sky.world"/>
     <arg name="sdf" default="$(find mavlink_sitl_gazebo)/models/$(arg vehicle)/$(arg vehicle).sdf"/>
     <env name="PX4_SIM_MODEL" value="$(arg vehicle)" />
     <env name="PX4_ESTIMATOR" value="$(arg est)" />
@@ -42,6 +42,6 @@
     </include>
     <!-- gazebo model -->
     <node name="$(anon vehicle_spawn)" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf -file $(arg sdf) -model $(arg vehicle) -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg R) -P $(arg P) -Y $(arg Y)"/>
-    <node name="green_dot" pkg="gazebo_ros" type="spawn_model" args="-sdf -file /home/sleepearly/tree-percher/catkin_ws/src/simulation/green_dot/model.sdf -x 0 -y 0 -z 1 -model green_dot" />
+    <node name="approach_arrow" pkg="gazebo_ros" type="spawn_model" args="-sdf -file /home/sleepearly/tree-percher/catkin_ws/src/simulation/approach_arrow/model.sdf -x 3 -y 2.5 -z 1 -model approach_arrow" />
     <node name="tree" pkg="gazebo_ros" type="spawn_model" args="-sdf -file /home/sleepearly/tree-percher/catkin_ws/src/simulation/tree/model.sdf -x 3 -y 3 -z 0 -model tree" />
 </launch>
