@@ -12,7 +12,7 @@
     <!-- vehicle model and world -->
     <arg name="est" default="ekf2"/>
     <arg name="vehicle" default="iris"/>
-    <arg name="world" default="$(find detector)/worlds/sky.world"/>
+    <arg name="world" default="$(find percher)/worlds/sky.world"/>
     <arg name="sdf" default="$(find mavlink_sitl_gazebo)/models/$(arg vehicle)/$(arg vehicle).sdf"/>
     <env name="PX4_SIM_MODEL" value="$(arg vehicle)" />
     <env name="PX4_ESTIMATOR" value="$(arg est)" />
@@ -42,8 +42,8 @@
     </include>
     <!-- gazebo model -->
     <node name="$(anon vehicle_spawn)" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf -file $(arg sdf) -model $(arg vehicle) -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg R) -P $(arg P) -Y $(arg Y)"/>
-    <node name="app1" pkg="gazebo_ros" type="spawn_model" args="-sdf -file $(find detector)/simulation/approach_arrow/model.sdf -x 3 -y 2.5 -z 1 -model app1" />
-    <node name="t1" pkg="gazebo_ros" type="spawn_model" args="-sdf -file $(find detector)/simulation/tree/model.sdf -x 3 -y 3 -z 0 -model t1" />
-    <node name="app2" pkg="gazebo_ros" type="spawn_model" args="-sdf -file $(find detector)/simulation/approach_arrow/model.sdf -x 0 -y 1.5 -z 1 -model app2" />
-    <node name="t2" pkg="gazebo_ros" type="spawn_model" args="-sdf -file $(find detector)/simulation/tree/model.sdf -x 0 -y 2 -z 0 -model t2" />
+    <node name="app1" pkg="gazebo_ros" type="spawn_model" args="-sdf -file $(find percher)/simulation/approach_arrow/model.sdf -x 3 -y 2.5 -z 1 -model app1" />
+    <node name="t1" pkg="gazebo_ros" type="spawn_model" args="-sdf -file $(find percher)/simulation/tree/model.sdf -x 3 -y 3 -z 0 -model t1" />
+    <node name="app2" pkg="gazebo_ros" type="spawn_model" args="-sdf -file $(find percher)/simulation/approach_arrow/model.sdf -x 0 -y 1.5 -z 1 -model app2" />
+    <node name="t2" pkg="gazebo_ros" type="spawn_model" args="-sdf -file $(find percher)/simulation/tree/model.sdf -x 0 -y 2 -z 0 -model t2" />
 </launch>
